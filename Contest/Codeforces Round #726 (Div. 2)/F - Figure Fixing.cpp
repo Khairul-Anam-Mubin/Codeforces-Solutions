@@ -116,7 +116,7 @@ int main() {
         bool flag = 1;
         for (int i = 0; i < n; i++) {
             if (vis[i] == 0) {
-                if (IsBipartite(i) == 0) continue;
+                if (IsBipartite(i) == 0) break;
                 for (int i = 0; i < component.size(); i++) {
                     int fst = component[i].first;
                     int sec = component[i].second;
@@ -124,7 +124,7 @@ int main() {
                 }
             }
         }
-        if (sum[1] != sum[2]) flag = 0;
+        if (bptr && sum[1] != sum[2]) flag = 0;
         if (flag) cout << "YES\n";
         else cout << "NO\n";
     }
